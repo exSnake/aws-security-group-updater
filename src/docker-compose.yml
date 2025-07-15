@@ -3,17 +3,6 @@ services:
     build: .
     env_file:
       - .env
-    environment:
-      # Cron execution mode
-      - ENABLE_CRON=true
-      - CRON_SCHEDULE=*/5 * * * *
-      
-      # Force check configuration
-      - FORCE_CHECK_HOURS=24
-      
-      # Optional syslog configuration
-      # - SYSLOG_SERVER=your.syslog.server
-      # - SYSLOG_PORT=514
     volumes:
       - ../data:/data
     restart: unless-stopped
